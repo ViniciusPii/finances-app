@@ -21,24 +21,23 @@ export default function SignUp({navigation}) {
   firebase.auth().signOut();
 
   async function handleSubmit() {
-    try {
-      if (name !== '' && email !== '' && password !== '') {
-        await firebase
-          .auth()
-          .createUserWithEmailAndPassword(email, password)
-          .then(async () => {
-            let uid = firebase.auth().currentUser.uid;
-            await firebase
-              .database()
-              .ref('users')
-              .child(uid)
-              .set({
-                saldo: 0,
-              });
-          });
-      }
-    } catch (error) {
-      alert(error.code);
+    if (name !== '' && email !== '' && password !== '') {
+      await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(async () => {
+          let uid = firebase.auth().currentUser.uid;
+          await firebase
+            .database()
+            .ref('users')
+            .child(uid)
+            .set({
+              saldo: 0,
+            });
+        })
+        .catch(error => {
+          alert(error.code);
+        });
     }
   }
 
