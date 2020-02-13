@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import firebase from '../../services/firebaseConnection';
-import {View} from 'react-native';
+import {ActivityIndicator} from 'react-native';
+import {Background, Container} from './styles';
 
 export default function Preload({navigation}) {
   useEffect(() => {
@@ -13,5 +14,11 @@ export default function Preload({navigation}) {
     });
   }, [navigation]);
 
-  return <View />;
+  return (
+    <Background>
+      <Container>
+        <ActivityIndicator color="#fff" size={70} />
+      </Container>
+    </Background>
+  );
 }
