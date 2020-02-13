@@ -18,6 +18,7 @@ const Routes = createAppContainer(
         tabBarOptions: {
           activeTintColor: '#fff',
           style: {
+            borderTopColor: 'transparent',
             backgroundColor: '#1b2c4c',
           },
         },
