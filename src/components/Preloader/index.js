@@ -17,7 +17,7 @@ export default function Preload({navigation}) {
   return (
     <Background>
       <Container>
-        <ActivityIndicator color="#fff" size={70} />
+        <ActivityIndicator color="#fff" size={'large'} />
       </Container>
     </Background>
   );
