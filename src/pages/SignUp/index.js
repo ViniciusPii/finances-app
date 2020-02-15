@@ -32,7 +32,7 @@ export default function SignUp({navigation}) {
             .ref('users')
             .child(uid)
             .set({
-              saldo: 0,
+              balance: 0,
             });
         })
         .catch(error => {
