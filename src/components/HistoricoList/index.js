@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Container, TipoText, ValorText} from './styles';
 
-export default function HistoricoList() {
+export default function HistoricoList({data}) {
   return (
-    <View>
-      <Text>...</Text>
-    </View>
+    <Container>
+      <TipoText type={data.type}>{data.type}</TipoText>
+      <ValorText>R$ {data.balance}</ValorText>
+    </Container>
   );
 }

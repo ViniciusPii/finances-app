@@ -42,6 +42,9 @@ export const Title = styled.Text`
 
 export const IconRight = styled.TouchableOpacity``;
 
-export const List = styled.FlatList`
+export const List = styled.FlatList.attrs({
+  paddingHorizontal: 15,
+  paddingVertical: 15,
+})`
   margin-top: 15px;
 `;
