@@ -12,6 +12,8 @@ import {
   Title,
   IconRight,
   List,
+  Sair,
+  SairText,
 } from './styles';
 
 export default function Dashboard({navigation}) {
@@ -42,6 +44,12 @@ export default function Dashboard({navigation}) {
           data={history}
           renderItem={({item}) => <HistoricoList data={item} />}
         />
+        <Sair
+          onPress={() => {
+            firebase.auth().signOut();
+          }}>
+          <SairText>Sair</SairText>
+        </Sair>
       </Container>
     </Background>
   );

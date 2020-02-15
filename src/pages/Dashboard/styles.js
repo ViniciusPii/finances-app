@@ -48,3 +48,8 @@ export const List = styled.FlatList.attrs({
 })`
   margin-top: 15px;
 `;
+
+export const Sair = styled.TouchableOpacity``;
+export const SairText = styled.Text`
+  color: #fff;
+`;
